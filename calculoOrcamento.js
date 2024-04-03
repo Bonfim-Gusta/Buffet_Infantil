@@ -3,9 +3,6 @@ const monitor = 40
 const cardapio = ["mini-pizza 0,80", "mini-pasteis 2,50", "batata-frita 0,80", "mandioca 0,50", "polenta 0,40", "anel-de-cebola 0,80", "coxinha 1,50", "bolinha-de-queijo 1,50", "risoles-de-pizza 1,20", "croquete-de-carne 1,00", "quibe 1,00", "saladas 0,30", "cachorro-quente 3,70", "batata-ao-molho 2,20", "batata-baby 2,50", "tabua-de-frios 1,90", "iscas-de-frango 3,80", "macarrao 1,05", "arroz 1,90", "calabresa 0,10", "linguica 0,65", "cupim 8,50", "contra-file 11,50", "frango-assado 9,80"]
 const bebida = 8
 
-//cardapio[0].split(" ")[0] -> pega a opção de cardapio
-//parseFloat(cardapio[0].split(" ")[1].replace(",", ".")) -> pega o valor da opção
-
 class ValorOrcamento
 {
     constructor(comidas, qtdAdulto, qtdCrianca, tempoFesta)
@@ -19,6 +16,7 @@ class ValorOrcamento
     validaDados()
     {
         let qtdAlimentos = 0
+        //Percorre os checkbox, verificando quantas opções foram preenchidas
         this.comidas.forEach(comida => {
             for(let c in cardapio)
             {
@@ -31,6 +29,7 @@ class ValorOrcamento
 
         let inputs = [this.qtdAdulto, this.qtdCrianca, this.tempoFesta]
         let naoPreenchidos = 0
+        //Verifica se algum outro input nao foi preenchido
         for(let i in inputs)
         {
             if(inputs[i] == undefined || inputs[i] == "" || inputs[i] == null)
@@ -44,7 +43,7 @@ class ValorOrcamento
 
     calculoOrcamento()
     {
-        let custoGarcons
+        let custoGarcons = 0
         if(this.qtdAdulto > 0 && this.qtdAdulto <= 15)
         {
             custoGarcons = 2 * garcom
@@ -133,7 +132,7 @@ function comidasSelecionadasComPreco()
 {
     let comidasSelecionadas = []
     document.querySelectorAll('.cardapio').forEach(c => {
-        if(c.checked)
+        if(c.checked) //Verifica quais opções foram selecionas e as armazenas em um array
         {
             comidasSelecionadas.push(c.id)
         }
@@ -143,7 +142,7 @@ function comidasSelecionadasComPreco()
     comidasSelecionadas.forEach(c => {
         for(let i in cardapio)
         {
-            if(cardapio[i].split(" ")[0] == c)
+            if(cardapio[i].split(" ")[0] == c) //Compara os itens da array de comidas selecionadas, percorrendo as opções de cardápio, para selecionar as opções com seu preço
             {
                 comidasSelecionadasComPreco.push(cardapio[i])
             }
@@ -168,7 +167,8 @@ function realizarOrcamento()
     ]
 
     let valor = new ValorOrcamento(comidas_selecionadas_com_preco, qtdAdulto.value, qtdCrianca.value, tempoFesta.value)
-    if(valor.validaDados() === false)
+    ///Verificação da validação dos dados
+    if(valor.validaDados() === false) //Se falso, exibe o modal de aviso, e deixa vermelho os campos restantes
     {
         $('#modalFaltamDados').modal('show')
         modalFaltamDados('modal-header bg-primary', 'Aviso!', 'Informe no mínimo 10 opções de cardápio e no máximo 100 adultos e 40 crianças', 'btn btn-primary', 'Ok', '')
@@ -183,7 +183,7 @@ function realizarOrcamento()
 
         document.getElementById("texto-requisitos").style.color = "red"
     }
-    else
+    else //Se verdadeiro, faz a animação de carregamento e exibe na tela o valor do orçamento
     {
         let carregando = document.createElement('span')
         carregando.style.display = 'block'
@@ -241,5 +241,3 @@ function removeCorAviso()
 {
     document.getElementById("texto-requisitos").style.color = "white"
 }
-
-//Comentar o código

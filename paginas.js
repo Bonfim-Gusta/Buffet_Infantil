@@ -1,18 +1,21 @@
 function exibeFotos()
 {
-    if(document.getElementById("select-estrutura").value === "cardapio")
+    //Capturar o value do Select para controlar o que será exibido na tela
+    if(document.getElementById("select-estrutura").value === "cardapio")//Se cardápio, aplica a lógica para carregar as fotos e textos das comidas
     {
         limpaFotos()
         document.querySelector('h1').innerHTML = "Cardápio"
         let opcoes_cardapio = ["Mini pizza", "Frios", "Cachorrro Quente", "Macarrão", "Iscas de frango", "Calabresa", "Mini pastéis", "Esfirra de carne", "Bolinha de queijo", "Coxinha", "Risole de pizza", "Croquete de Carne", "Batata frita", "Polenta frita", "Anel de Cebola", "Mandioca"]
 
         document.getElementById('ul').innerHTML = ""
+        //forEach Percorre a array de opções do cardápio criando uma li dentro da ul que recebe como conteúdo a opção de comida
         opcoes_cardapio.forEach(c => {
             let itemLista = document.createElement('li')
             itemLista.innerHTML = c
             document.getElementById('ul').appendChild(itemLista)
         })
 
+        //Lógica que cria a estrutura HTML para exibir as fotos em carousel e os indicators
         let carousel_inner = document.querySelector('#carousel-inner')
         for(let i = 1; i <= 16; i++)
         {
@@ -35,7 +38,7 @@ function exibeFotos()
             ol.appendChild(li)
         }
     }
-    else
+    else //Se não for cardápio, aplica a lógica para carregar as fotos e textos dos brinquedos
     {
         limpaFotos()
         document.querySelector('h1').innerHTML = "Brinquedos"
@@ -73,7 +76,7 @@ function exibeFotos()
 
 }
 
-function limpaFotos()
+function limpaFotos() //Função para limpar todos o conteudo adiocionado, para que seja criado o outro, na troca do select
 {
     let items = document.querySelectorAll('.carousel-item')
     items.forEach(i => {
@@ -86,21 +89,22 @@ function limpaFotos()
     })
 }
 
-function alteraFotos()
+function alteraFotos() //Função chamada que captura o evento de mudança do select e exibe as fotos
 {
     var select = document.getElementById('select-estrutura'); 
     select.addEventListener('change', exibeFotos())
 }
 
-function carregarOpcoesCardapio()
+function carregarOpcoesCardapio() //Função que exibe na tela a estrutura de labels e inputs para fazer a seleção das opções de cardápio (Por ter várias opções, a função usar um looping para fazer com que a estrutura no arquivo HTML não fique repetitivo)
 {
-    avisoDidatico()
+    avisoDidatico() //Alert avisando que se trata de um projeto didático
     let cardapio_pt1 = document.querySelector('.cardapio-pt1')
     let cardapio_pt2 = document.querySelector('.cardapio-pt2')
     let cont = 0
     cardapio.forEach(c => {
         let div = document.createElement('div')
         let label = document.createElement('label')
+        //Recupera os itens da array cardápio, separando o nome do preço, substituindo os "-" por " " e deixando a primeira letra maiúscula para exibir na tela
         label.innerHTML = c.split(" ")[0].replaceAll("-", " ").replace(c[0], c[0].toUpperCase())
         let input = document.createElement('input')
         input.type = "checkbox"
@@ -122,24 +126,3 @@ function carregarOpcoesCardapio()
         }
     })
 }
-
-/* BackEnd que recuperaria o tamanho do diretório para percorrer as fotos
-const fs = require('fs');
-function tamanhoDiretorio(diretorio, arquivos)
-{
-    if(!arquivos)
-    {
-        arquivos = []
-    }
-    let listaDeArquivos = fs.readdirSync(diretorio)
-    for(let k in listaDeArquivos)
-    {
-       arquivos.push(listaDeArquivos[k])    
-    }    
-    return arquivos.length
-}
-
-let teste = tamanhoDiretorio("./imagens/brinquedos/")
-console.log(teste)
-
-*/
