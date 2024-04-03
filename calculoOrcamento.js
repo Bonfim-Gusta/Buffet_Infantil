@@ -219,7 +219,7 @@ function refazerOrcamento()
 function avisoDidatico()
 {
     $('#modalFaltamDados').modal('show')
-    modalFaltamDados('modal-header bg-warning', 'Aviso!', 'Este é um projeto com fins didáticos e de enriquecimento de portifólio!<br>Apesar de buscar chegar o mais próximo possível dos valores, eles não são compatíveis com a realidade<br>Para um orçamento mais preciso, entre em contato com o buffet, pelo whatsapp<br> <a style="color:green;" href="https://api.whatsapp.com/send?phone=5519981966848&fbclid=PAAaZ9GIikL2sejEMKeoGRtu1QZc85oV7dpzL3x0_d9GGQsbJigpEBAgbZByw">Mande sua mensagem <i class="fa-brands fa-whatsapp"></i></a>', 'btn btn-warning text-light', 'Ok', '')
+    modalFaltamDados('modal-header bg-warning', 'Aviso!', 'Este é um projeto com fins didáticos e de enriquecimento de portifólio!<br>Apesar de buscar chegar o mais próximo possível dos valores, eles não são compatíveis com a realidade<br>Para um orçamento mais preciso, entre em contato com o buffet, pelo whatsapp<br><br> <a style="color:green;" href="https://api.whatsapp.com/send?phone=5519981966848&fbclid=PAAaZ9GIikL2sejEMKeoGRtu1QZc85oV7dpzL3x0_d9GGQsbJigpEBAgbZByw">Mande sua mensagem <i class="fa-brands fa-whatsapp"></i></a>', 'btn btn-warning text-light', 'Ok', '')
 }
 
 function modalFaltamDados(bgTitle, title, msg, btnColor, textBtn, campos_restantes)

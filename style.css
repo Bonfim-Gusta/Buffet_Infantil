@@ -225,7 +225,7 @@ input[type="checkbox"] {
     }
 
     #conteudos-estrutura{
-        font-size: 160%;
+        font-size: 140%;
     }
 
     .foto-cardapio{
@@ -242,7 +242,7 @@ input[type="checkbox"] {
     }
 
     #conteudos-orcamento h1, #conteudos-orcamento h3{
-        font-size: 260%;
+        font-size: 190%;
     }
 
     .cardapio-pt2{
@@ -251,7 +251,7 @@ input[type="checkbox"] {
     }
 
     label{
-        font-size: 160%;
+        font-size: 130%;
     }
 
     input[type="checkbox"] {
@@ -265,7 +265,7 @@ input[type="checkbox"] {
     }
 
     .modal-header, .modal-body, .modal-footer{
-        font-size: 120%;
+        font-size: 115%;
     }
 
 
