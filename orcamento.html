@@ -54,7 +54,8 @@
     <section id="conteudos-orcamento">
         <div class="container">
             <div class="p-4 fundo-fotos">
-                <h1>Monte sua festa!</h1><p id="texto-requisitos">(Informe no mínimo 10 opções de cardápio e no máximo 100 adultos ou 40 crianças)</p>
+                <h1>Monte sua festa!</h1>
+                <p id="texto-requisitos">(Informe no mínimo 10 opções de cardápio e no máximo 100 adultos ou 40 crianças)</p>
                 <div class="row borda-superior">
                     <div class="col-12 col-lg-6 cardapio-pt1">
                         <h3>Cardápio:</h3>
@@ -66,19 +67,21 @@
 
                     <div class="col-12 col-lg-6">
                         <h3>Qtd. adultos:</h3>
-                        <input type="text" class="form-control" id="qtd-adulto" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                        <input id="qtd-adulto" type="text" class="form-control" onfocus="removeBorda(id)" onclick="removeCorAviso()">
                         <br>
                         <h3>Qtd. crianças: (até 10 anos)</h3>
-                        <input type="text" class="form-control" id="qtd-crianca" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                        <input id="qtd-crianca"  type="text" class="form-control"onfocus="removeBorda(id)" onclick="removeCorAviso()">
                         <br>
                         <h3>Tempo de festa:</h3>
-                        <select name="" class="form-control" id="tempo-festa" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                        <select id="tempo-festa" class="form-control" onfocus="removeBorda(id)" onclick="removeCorAviso()">
                             <option value=""></option>
                             <option value="3">3 horas</option>
                             <option value="4">4 horas</option>
                         </select>
                         <br>
-                        <button id="btn-fazer-orcamento" class="btn btn-primary" onclick="realizarOrcamento()">Fazer orçamento</button>
+                        <button id="btn-fazer-orcamento" class="btn btn-primary" onclick="realizarOrcamento()">
+                            Fazer orçamento
+                        </button>
                     </div>
 
                     <div id="saida-orcamento" class="col-12 col-lg-6">

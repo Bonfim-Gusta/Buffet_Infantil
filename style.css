@@ -1,3 +1,4 @@
+/*Geral*/
 #barra-navegacao{
     background-color: rgba(33, 35, 35, 0.82);
     margin-bottom: 15px;
@@ -25,6 +26,25 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+footer{
+    background-color: rgb(25, 24, 24);
+    color: #ffffff;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+footer a{
+    color: white;
+    margin-left: 5px;
+    font-size: 26px;
+}
+
+footer a:hover{
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+/*Index*/
 #conteudos-index h1{
     font-size: 56px;
     color: white;
@@ -86,24 +106,6 @@ body{
     transition: all 1.5s;
 }
 
-footer{
-    background-color: rgb(25, 24, 24);
-    color: #ffffff;
-    padding: 15px 0px;
-    text-align: center;
-}
-
-footer a{
-    color: white;
-    margin-left: 5px;
-    font-size: 26px;
-}
-
-footer a:hover{
-    color: #ffffff;
-    opacity: 0.5;
-}
-
 .imagem-menino{
     width: 50px;
     position: absolute;
@@ -116,7 +118,7 @@ footer a:hover{
     transform: translate(-60%, -80%);
 }
 
-/* ////////////////////////////////// */
+/*Estrutura*/
 
 .foto-cardapio{
     width: 46%;
@@ -160,6 +162,7 @@ footer a:hover{
     height: 50px;
 }
 
+/*Orçamento*/
 input[type="checkbox"] {
     margin: 5px 0 0 0;
     vertical-align: middle;
@@ -172,12 +175,12 @@ input[type="checkbox"] {
     height: 18px;
   }
 
-.modal-body, .modal-footer{
-    background-color: #2f3031;
+.modal-header{
     color: #f7f7f7;
 }
 
-.modal-header{
+.modal-body, .modal-footer{
+    background-color: #2f3031;
     color: #f7f7f7;
 }
 
@@ -199,6 +202,7 @@ input[type="checkbox"] {
     padding: 8px 0 5px 0;
 }
 
+/*Medias Queries*/
 @media (max-width: 575.98px) {
     #barra-navegacao ul li a{
         text-align: center;
@@ -302,10 +306,7 @@ input[type="checkbox"] {
     }
 }
 
-@media (min-width: 1200px) {
-    
-}
-
+/*Animações*/
 @keyframes loading {
     0%{
         transform: rotate(0deg);
