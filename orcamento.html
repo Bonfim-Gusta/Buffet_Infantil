@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento - Andrade's Kids</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/3f5880712b.js" crossorigin="anonymous"></script>
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ícone do site -->
+    <link rel="shortcut icon" href="imagens/geral/Logo.png" type="image/x-icon">
+
+</head>
+<body onload="carregarOpcoesCardapio()">
+    <nav id="barra-navegacao" class="navbar navbar-expand-lg">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img class="img-fluid" src="imagens/geral/logo_extendida.png" alt="" style="width: 142px;">
+            </a>
+    
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+                <i class="fa fa-bars fa-lg text-light"></i>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link ativo" href="index.html">HOME</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="estrutura.html">FOTOS</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="orcamento.html">ORÇAMENTO</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+    </nav>
+    
+    <section id="conteudos-orcamento">
+        <div class="container">
+            <div class="p-4 fundo-fotos">
+                <h1>Monte sua festa!</h1><p id="texto-requisitos">(Informe no mínimo 10 opções de cardápio e no máximo 100 adultos ou 40 crianças)</p>
+                <div class="row borda-superior">
+                    <div class="col-12 col-lg-6 cardapio-pt1">
+                        <h3>Cardápio:</h3>
+                        <!-- Vai receber os labels e inputs das opções de cardápio através do JS -->
+                    </div>
+                    <div class="col-12 col-lg-6 cardapio-pt2">
+                        <!-- Vai receber os labels e inputs das opções de cardápio através do JS -->
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <h3>Qtd. adultos:</h3>
+                        <input type="text" class="form-control" id="qtd-adulto" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                        <br>
+                        <h3>Qtd. crianças: (até 10 anos)</h3>
+                        <input type="text" class="form-control" id="qtd-crianca" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                        <br>
+                        <h3>Tempo de festa:</h3>
+                        <select name="" class="form-control" id="tempo-festa" onfocus="removeBorda(id)" onclick="removeCorAviso()">
+                            <option value=""></option>
+                            <option value="3">3 horas</option>
+                            <option value="4">4 horas</option>
+                        </select>
+                        <br>
+                        <button id="btn-fazer-orcamento" class="btn btn-primary" onclick="realizarOrcamento()">Fazer orçamento</button>
+                    </div>
+
+                    <div id="saida-orcamento" class="col-12 col-lg-6">
+                        <h2 id="festa" style="text-align: center;">Sua festa sairá no valor de:</h2>
+                        <h3 id="valorOrcamento" style="text-align: center;"><!-- R$ ******* --></h3>
+                        <button id="botao-refazer" style="display: none; margin: 0 auto;" class="btn btn-primary" onclick="refazerOrcamento()">Refazer orçamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalFaltamDados" tabindex="-1" role="dialog" aria-labelledby="modal-orcamento" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div id="modal-header">
+              <h5 class="modal-title" id="modal-orcamento"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-recado"></div>
+              <p class="campos_restantes"></p>
+            </div>
+            
+            <div class="modal-footer">
+              <button id="botaoModal" type="button" data-dismiss="modal"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+        <div class="container">
+            <span>Nos acompanhe nas redes sociais</span>
+            <a href="https://www.facebook.com/AndradesKidsBuffet"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/andrades_kids/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+<script src="paginas.js"></script>
+<script src="calculoOrcamento.js"></script>
+</html>

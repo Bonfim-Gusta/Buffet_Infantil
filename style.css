@@ -1,0 +1,317 @@
+#barra-navegacao{
+    background-color: rgba(33, 35, 35, 0.82);
+    margin-bottom: 15px;
+}
+
+#barra-navegacao ul li a{
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+#barra-navegacao ul li a:hover{
+    color: #00daf6;
+    transition: all 0.8s;
+}
+
+body{
+    background: url(imagens/geral/bg_Teste2.png),
+                linear-gradient(50deg, #00daf6, #c90090) no-repeat;
+
+    background-size: cover;
+    background-attachment: fixed;
+
+    /*font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#conteudos-index h1{
+    font-size: 56px;
+    color: white;
+    text-shadow: 20px -10px 5px #322f2fd3;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#conteudos-index h4{
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+    
+.fundo-cards{
+    border-radius: 20px;
+    border: 3px solid #00daf6;
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(41, 44, 44);
+    color: white;
+    width: 290px;
+    box-shadow: 20px -10px 5px #322f2f72;
+    margin-bottom: 30px;
+}
+
+.fundo-fotos{
+    border-radius: 20px;
+    border: 3px solid #00daf6;
+    padding: 15px;
+    background-color: #292c2c;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.botoes-index{
+    border-radius: 20px;
+    border-color: #ffffff;
+    border-width: 1px;
+    height: 50px;
+    background: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+#botao-orcamento, #botao-estrutura, #botao-whatsapp{
+    border-color: #00daf6;
+    color: #00daf6;
+}
+
+#botao-orcamento:hover, #botao-estrutura:hover, #botao-whatsapp:hover{
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: #00d9f6b6;
+}
+
+.botoes-index:hover{
+    transition: all 1.5s;
+}
+
+footer{
+    background-color: rgb(25, 24, 24);
+    color: #ffffff;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+footer a{
+    color: white;
+    margin-left: 5px;
+    font-size: 26px;
+}
+
+footer a:hover{
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.imagem-menino{
+    width: 50px;
+    position: absolute;
+    transform: translate(-40%, -80%);
+}
+
+.imagem-menina{
+    width: 50px;
+    position: absolute;
+    transform: translate(-60%, -80%);
+}
+
+/* ////////////////////////////////// */
+
+.foto-cardapio{
+    width: 46%;
+    margin: 0 27%;
+}
+
+.foto-brinquedos{
+    width: 100%;
+    height: 100%;
+}
+
+.borda-conteudo{
+    border: 2px solid #c90090;
+    border-radius: 15px;
+}
+
+#conteudos-orcamento p{
+    margin-bottom: 5px;
+}
+
+#conteudos-orcamento button.btn-primary{
+    background-color: #00daf6;
+    color: #292c2c;
+    font-weight: 500;
+}
+
+.borda-superior{
+    border-top: 1px solid rgb(206, 198, 198);
+    padding: 10px 0px;
+}
+
+#select-estrutura, #qtd-adulto, #qtd-crianca, #tempo-festa{ 
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ece0e0;
+}
+
+#select-estrutura option, #tempo-festa option{
+    background-color: #272427;
+    color: #ffffff;
+    height: 50px;
+}
+
+input[type="checkbox"] {
+    margin: 5px 0 0 0;
+    vertical-align: middle;
+    position: relative;
+    background: transparent;
+    border-color: white;
+    accent-color: #00daf6;
+    float: right;
+    width: 18px;
+    height: 18px;
+  }
+
+.modal-body, .modal-footer{
+    background-color: #2f3031;
+    color: #f7f7f7;
+}
+
+.modal-header{
+    color: #f7f7f7;
+}
+
+.cardapio-pt2{
+    margin-top: 41.5px;
+}
+
+#saida-orcamento{
+    align-self: center;
+}
+
+#valorOrcamento{
+    color: #272427;
+    background-color: #ffffff;
+}
+
+#conteudos-orcamento .row .col-12>div{
+    border-top: 1px solid white;
+    padding: 8px 0 5px 0;
+}
+
+@media (max-width: 575.98px) {
+    #barra-navegacao ul li a{
+        text-align: center;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    #conteudos-index h1{
+        font-size: 42px;
+    }
+
+    #select-estrutura{
+        margin: 30px 0;
+    }
+
+    #select-estrutura, #qtd-adulto, #qtd-crianca, #tempo-festa{ 
+        background-color: transparent;
+        border-color: #ffffff;
+        color: #ece0e0;
+        font-size: 160%;
+    }
+
+    #conteudos-estrutura{
+        font-size: 160%;
+    }
+
+    .foto-cardapio{
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .foto-texto{
+        margin-top: 20px;
+    }
+
+    .btn{
+        font-size: 160%;
+    }
+
+    #conteudos-orcamento h1, #conteudos-orcamento h3{
+        font-size: 260%;
+    }
+
+    .cardapio-pt2{
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    label{
+        font-size: 160%;
+    }
+
+    input[type="checkbox"] {
+        float: right;
+        margin: 9px 0 0 0;
+        display: flex;
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+        border: 1px solid white;
+    }
+
+    .modal-header, .modal-body, .modal-footer{
+        font-size: 120%;
+    }
+
+
+    #festa{
+        margin-top: 20px;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .foto-cardapio{
+        width: 80%;
+        margin: 0 10%;
+    }
+    .foto-texto{
+        margin-top: 20px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .foto-cardapio{
+        width: 54%;
+        margin: 0 23%;
+    }
+    .foto-texto{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .foto-cardapio{
+        width: 60%;
+        margin: 0 20%;
+    }
+    .foto-texto{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
